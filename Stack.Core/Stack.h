@@ -12,6 +12,9 @@ public:
 	}
 
 	T Pop() {		
+		if (items.size() <= 0)
+			throw std::exception("Empty stack!");
+
 		auto it = items.end();
 		it--;
 		T last = items[items.size() - 1];
