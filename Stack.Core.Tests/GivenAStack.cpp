@@ -1,5 +1,7 @@
 #include "pch.h"
 
+#include "Stack.h"
+
 class GivenAStack : public ::testing::Test {
 public:
 };
