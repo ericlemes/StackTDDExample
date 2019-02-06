@@ -22,6 +22,9 @@ public:
 	}
 
 	T Pop() {			
+		if (top == nullptr)
+			throw std::exception("Empty stack!");
+
 		T poppedItem = top->Item;
 		top = top->Next;
 		return poppedItem;
