@@ -2,13 +2,14 @@
 
 template <class T>
 class Stack {
+private:
+	T item;
 public:
 	void Push(T item) {
-
+		this->item = item;
 	}
 
-	T Pop() {
-		T t = T();
-		return t;
+	T Pop() {		
+		return item;
 	}
 };
