@@ -9,7 +9,8 @@ private:
 	StackItem<T>* top;	
 public:
 	void Push(T item) {
-		
+		top = new StackItem<T>();
+		top->Item = item;		
 	}
 
 	T Pop() {						
