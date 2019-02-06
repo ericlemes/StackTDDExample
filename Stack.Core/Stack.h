@@ -1,25 +1,18 @@
 #pragma once
 
 #include <vector>
+#include "StackItem.h"
 
 template <class T>
 class Stack {
 private:
-	std::vector<T> items;
+	StackItem<T>* top;	
 public:
 	void Push(T item) {
-		items.push_back(item);		
+		
 	}
 
-	T Pop() {		
-		if (items.size() <= 0)
-			throw std::exception("Empty stack!");
-
-		auto it = items.end();
-		it--;
-		T last = items[items.size() - 1];
-		items.erase(it);
-		
-		return last;
+	T Pop() {						
+		return top->Item;
 	}
 };
