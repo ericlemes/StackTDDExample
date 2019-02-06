@@ -39,6 +39,19 @@ TEST_F(GivenAStack, WhenDestroyingStackShouldFreeMemory) {
 	//GMock automatically verify expectations on destruction.
 }
 
+TEST_F(GivenAStack, WhenPoppingShouldDestroyStackItem) {
+	MockAllocator<StackItem<int>> mockAllocator;
+	Stack<int> s = Stack<int>(mockAllocator);
+
+	auto i1 = new StackItem<int>();
+	EXPECT_CALL(mockAllocator, Create())
+		.WillOnce(::testing::Return(i1));
+	EXPECT_CALL(mockAllocator, Destroy(i1)).Times(1);
+
+	s.Push(1);
+	s.Pop();
+}
+
 TEST_F(GivenAStack, WhenPushingMultipleElementsShouldReturnExpectedValue) {
 	stack.Push(1);
 	stack.Push(2);
