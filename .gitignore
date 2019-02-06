@@ -2,3 +2,4 @@
 /Debug
 /Stack.Core/Debug
 /Stack.Core/*.user
+/Stack.Core.Tests/Debug
