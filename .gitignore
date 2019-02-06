@@ -1,1 +1,4 @@
 /.vs
+/Debug
+/Stack.Core/Debug
+/Stack.Core/*.user
