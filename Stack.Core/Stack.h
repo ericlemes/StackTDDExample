@@ -9,11 +9,21 @@ private:
 	StackItem<T>* top;	
 public:
 	void Push(T item) {
-		top = new StackItem<T>();
-		top->Item = item;		
+		if (top == nullptr) {
+			top = new StackItem<T>();
+			top->Item = item;
+		}
+		else {
+			StackItem<T>* newItem = new StackItem<T>();
+			newItem->Item = item;
+			newItem->Next = top;
+			top = newItem;
+		}
 	}
 
-	T Pop() {						
-		return top->Item;
+	T Pop() {			
+		T poppedItem = top->Item;
+		top = top->Next;
+		return poppedItem;
 	}
 };
