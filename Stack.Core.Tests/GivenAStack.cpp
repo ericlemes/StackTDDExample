@@ -4,14 +4,10 @@
 
 class GivenAStack : public ::testing::Test {
 public:
+	Stack<int> stack;
 };
 
-TEST_F(GivenAStack, WhenConstructingShouldNotThrow) {
-	Stack<int> s;
-}
-
-TEST_F(GivenAStack, WhenPushingShouldAddElement) {
-	Stack<int> s;
-	s.Push(1);
-	ASSERT_EQ(1, s.Pop());
+TEST_F(GivenAStack, WhenPushingShouldAddElement) {	
+	stack.Push(1);
+	ASSERT_EQ(1, stack.Pop());
 }
