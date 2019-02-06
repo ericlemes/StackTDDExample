@@ -47,7 +47,9 @@ public:
 			throw std::exception("Empty stack!");
 
 		T poppedItem = top->Item;
+		StackItem<T>* itemToDelete = top;
 		top = top->Next;
+		allocator.Destroy(itemToDelete);
 		return poppedItem;
 	}
 };
