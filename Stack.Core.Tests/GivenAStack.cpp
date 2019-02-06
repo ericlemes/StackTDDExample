@@ -7,7 +7,7 @@ public:
 };
 
 TEST_F(GivenAStack, WhenConstructingShouldNotThrow) {
-	Stack s;
+	Stack<int> s;
 }
 
 TEST_F(GivenAStack, WhenPushingShouldAddElement) {
