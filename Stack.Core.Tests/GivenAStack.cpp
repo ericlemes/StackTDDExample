@@ -19,3 +19,7 @@ TEST_F(GivenAStack, WhenPushingMultipleElementsShouldReturnExpectedValue) {
 	ASSERT_EQ(2, stack.Pop());
 	ASSERT_EQ(1, stack.Pop());
 }
+
+TEST_F(GivenAStack, WhenPoppingEmptyStackShouldThrow) {
+	EXPECT_THROW({ stack.Pop(); }, std::exception);
+}
