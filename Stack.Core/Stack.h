@@ -1,15 +1,22 @@
 #pragma once
 
+#include <vector>
+
 template <class T>
 class Stack {
 private:
-	T item;
+	std::vector<T> items;
 public:
 	void Push(T item) {
-		this->item = item;
+		items.push_back(item);		
 	}
 
 	T Pop() {		
-		return item;
+		auto it = items.end();
+		it--;
+		T last = items[items.size() - 1];
+		items.erase(it);
+		
+		return last;
 	}
 };
