@@ -2,12 +2,24 @@
 
 #include <vector>
 #include "StackItem.h"
+#include "IAllocator.h"
+#include "HeapAllocator.h"
 
 template <class T>
 class Stack {
 private:
 	StackItem<T>* top;	
+	HeapAllocator<StackItem<T>> heapAllocator;
+	IAllocator<StackItem<T>>& allocator;
 public:
+	Stack() : allocator(heapAllocator) {
+
+	}
+
+	Stack(IAllocator<StackItem<T>>& a) : allocator(a) {
+
+	}
+
 	void Push(T item) {
 		if (top == nullptr) {
 			top = new StackItem<T>();

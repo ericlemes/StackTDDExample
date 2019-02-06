@@ -147,6 +147,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="HeapAllocator.h" />
+    <ClInclude Include="IAllocator.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="StackItem.h" />
     <ClInclude Include="stdafx.h" />
