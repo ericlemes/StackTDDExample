@@ -20,13 +20,22 @@ public:
 
 	}
 
+	~Stack() {
+		StackItem<T>* curr = top;
+		while (curr != nullptr) {
+			StackItem<T>* toDelete = curr;
+			curr = curr->Next;			
+			allocator.Destroy(toDelete);
+		}
+	}
+
 	void Push(T item) {
 		if (top == nullptr) {
-			top = new StackItem<T>();
+			top = allocator.Create();
 			top->Item = item;
 		}
 		else {
-			StackItem<T>* newItem = new StackItem<T>();
+			StackItem<T>* newItem = allocator.Create();
 			newItem->Item = item;
 			newItem->Next = top;
 			top = newItem;

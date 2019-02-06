@@ -29,6 +29,7 @@ TEST_F(GivenAStack, WhenDestroyingStackShouldFreeMemory) {
 	EXPECT_CALL(mockAllocator, Create())
 		.WillOnce(::testing::Return(i1))
 		.WillOnce(::testing::Return(i2));		
+	
 	EXPECT_CALL(mockAllocator, Destroy(i1)).Times(1);
 	EXPECT_CALL(mockAllocator, Destroy(i2)).Times(1);	
 
