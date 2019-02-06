@@ -4,10 +4,8 @@
 #include "pch.h"
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n"; 
-}
+int main(int argc, char** argv) {	::testing::InitGoogleMock(&argc, argv);	return RUN_ALL_TESTS();}
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
